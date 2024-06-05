@@ -53,9 +53,9 @@ const ProductsTotal = () => {
                     <li>Shopping Cart</li>
                 </ul>
             </div>
-            <div className='w-[85%] flex h-auto mx-auto border mt-[30px]'>
+            <div className='w-[85%] flex h-auto mx-auto mt-[30px]'>
                 <div className='w-[65%]'>
-                    <table className='w-[100%] border'>
+                    <table className='w-[100%]'>
                         <thead>
                             <tr>
                                 <th className='w-[31%] text-left font-normal'>Products</th>
@@ -107,7 +107,7 @@ const ProductsTotal = () => {
                         </tbody>
                     </table>
                 </div>
-                <div className='w-[35%] border'>
+                <div className='w-[35%]'>
                     <div className='w-[85%] mx-auto'>
                         <h2 className='text-[20px] font-semibold border-b'>Cart Totals</h2>
                         <form action="" className='mt-[20px]' onSubmit={handleCouponApply}>

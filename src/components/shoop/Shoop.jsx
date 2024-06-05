@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 const Shoop = () => {
   return (
-    <div className='w-[100%] border'>
+    <div className='w-[100%]'>
       <ul className='flex items-center  w-[85%] h-[40px] mx-auto' >
         <li className='font-semibold'> <Link to='/'>Home /</Link></li>
         <li> Shop</li>

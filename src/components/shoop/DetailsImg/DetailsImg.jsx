@@ -45,12 +45,12 @@ const DetailsImg = () => {
   };
 
   return (
-    <div className="w-[85%] mx-auto border p-4 flex">
-      <div className="w-[50%] border flex">
+    <div className="w-[85%] mx-auto p-4 flex">
+      <div className="w-[50%] flex">
         <div className="w-[25%]">
           <ul className="w-[100%] h-full">
             {logos.map((item, index) => (
-              <li key={index} className="w-full h-1/4 border bg-[#f0efef] flex items-center justify-center cursor-pointer" onClick={() => handleClick(index)}>
+              <li key={index} className="w-full h-1/4 bg-[#f0efef] flex items-center justify-center cursor-pointer" onClick={() => handleClick(index)}>
                 <img src={item} alt="" />
               </li>
             ))}
@@ -60,7 +60,7 @@ const DetailsImg = () => {
           <img src={logos[0]} alt="" className={`w-[300px] h-[]`} />
         </div>
       </div>
-      <div className="w-[50%] border p-4">
+      <div className="w-[50%] p-4">
         <h2 className="text-xl mb-2 cursor-pointer">Barberton Daisy</h2>
         <div className="flex items-center mb-2 justify-between">
           <span className="text-lg mr-2 text-green-600 text-[18px] font-semibold cursor-pointer">$119.00</span>
@@ -93,9 +93,9 @@ const DetailsImg = () => {
         </div>
         <div className="flex gap-3 mb-4">
           <div className="flex gap-2 items-center cursor-pointer">
-            <button onClick={() => handleQuantityChange('decrease')} className="w-[35px] h-[35px] rounded-[50%] border bg-green-500 text-white"><Remove /></button>
+            <button onClick={() => handleQuantityChange('decrease')} className="w-[35px] h-[35px] rounded-[50%] bg-green-500 text-white"><Remove /></button>
             <span>{quantity}</span>
-            <button onClick={() => handleQuantityChange('increase')} className="w-[35px] h-[35px] rounded-[50%] border bg-green-500 text-white"><Add /></button>
+            <button onClick={() => handleQuantityChange('increase')} className="w-[35px] h-[35px] rounded-[50%] bg-green-500 text-white"><Add /></button>
           </div>
           <button className="w-[130px] h-[45px] flex items-center justify-center rounded border-[3px] border-green-500 font-semibold text-white text-lg bg-green-500 cursor-pointer">Buy Now</button>
           <button onClick={handleAddToCart} className="w-[130px] text-lg h-[45px] flex items-center justify-center rounded border-[3px] border-green-500 cursor-pointer">Add To Cart</button>
