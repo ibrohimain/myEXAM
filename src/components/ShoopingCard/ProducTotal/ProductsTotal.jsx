@@ -124,7 +124,7 @@ const ProductsTotal = () => {
                         </ul>
                         <div className='flex justify-between mt-[10px]'>
                             <p className='font-semibold text-[18px]'>Total</p>
-                            <span className='text-[18px] text-green-500 font-semibold'>${total.toFixed(2)}</span>
+                            <span className='text-[18px] text-green-500 font-mediumgit'>${total.toFixed(2)}</span>
                         </div>
                         <button onClick={handleCheckout} className='w-[100%] h-[45px] mt-[20px] rounded bg-green-500 text-white font-semibold'>Proceed To Checkout</button>
                         <p className='text-[18px] text-center text-green-500 mb-[10px] mt-[10px]'>Continue Shopping</p>
