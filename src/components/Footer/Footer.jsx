@@ -2,7 +2,7 @@ import { FaFacebookF } from 'react-icons/fa';
 import { Instagram, Twitter, YouTube } from '@mui/icons-material';
 import { LiaLinkedinIn } from 'react-icons/lia';
 import { Link } from 'react-router-dom';
-import {  } from '../../redux/footerData';
+import { } from '../../redux/footerData';
 import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import PhoneIcon from '@mui/icons-material/Phone';
 import message from './footer_img/Message.png'
@@ -16,12 +16,12 @@ import { footerData } from '../../redux/footerData';
 
 const Footer = () => {
     return (
-        <div className='w-[85%] h-[650px] mx-auto mt-[80px] bg-[#f7f7f7] border-b-[3px] border-green-100'>
-            <div className='w-[100%] h-[40%]  flex'>
+        <div className='w-[85%] h-[650px]  mx-auto mt-[80px] bg-[#f7f7f7] '>
+            <div className='xl:w-full xl:flex lg:flex md:flex sm:flex flex'>
                 {footerData.map((item, index) => (
                     <div key={index} className='w-[22%] h-[100%]  flex items-center justify-center'>
-                        <div className='w-[85%] h-[85%] relative border-r-[2px]'>
-                            <img src={item.img_url} alt="" className='ml-[20px] h-[100px] w-[90px]' />
+                        <div className='w-[270px] h-[300px] relative border-r-[2px]'>
+                            <img src={item.img_url} alt="" className='ml-[20px] h-[100px] w-[90px] mt-[5px]' />
                             <div className='absolute bgSize top-[8%] left-[4%]'></div>
                             <h2 className='font-semibold text-[17px] mt-[15px]'>{item.common_name}</h2>
                             <p className='text-[#636262] w-[80%] mt-[5px]'>{item.common_info}</p>

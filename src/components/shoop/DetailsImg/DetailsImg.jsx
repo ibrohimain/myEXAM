@@ -57,7 +57,7 @@ const DetailsImg = () => {
           </ul>
         </div>
         <div className="w-[75%] flex items-center justify-center cursor-pointer">
-          <img src={logos[0]} alt="" className={`w-[300px] h-[300px]`} />
+          <img src={logos[0]} alt="" className={`w-[300px] h-[]`} />
         </div>
       </div>
       <div className="w-[50%] border p-4">

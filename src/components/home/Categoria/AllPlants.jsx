@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { FaShoppingCart, FaSearch, FaHeart } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../../redux/cartSlice';
 
 const AllPlants = ({ currentItems, currentPage, totalPages, handleNext, handlePrevious, renderPagination }) => {
     const dispatch = useDispatch();
     const [qty, setQty] = useState(1);
+
     const handleAddToCart = (product) => {
         let totalPrice = qty * product.price;
         const tempProduct = {
@@ -33,7 +33,6 @@ const AllPlants = ({ currentItems, currentPage, totalPages, handleNext, handlePr
                                         <li className='rounded bg-[#ededed] flex justify-center items-center w-[40px] h-[40px]'><FaSearch className='text-black' /></li>
                                         <li className='rounded bg-[#ededed] flex justify-center items-center w-[40px] h-[40px]'><FaHeart className='text-black' /></li>
                                     </ul>
-
                                 </div>
                             </div>
                         </div>

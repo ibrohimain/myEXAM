@@ -1,5 +1,5 @@
-import { Button, Slider } from '@mui/material';
 import React, { useState } from 'react';
+import { Button, Slider, MenuItem, Select } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import './category.css';
 import AllPlants from './AllPlants';
@@ -13,12 +13,13 @@ const Categoria = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [activeTab, setActiveTab] = useState('allPlants');
     const [priceRange, setPriceRange] = useState([39, 1230]);
+    const [sortOption, setSortOption] = useState('default');
 
     const totalItems = Data.length;
     const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
 
     const startIdx = (currentPage - 1) * ITEMS_PER_PAGE;
-    const currentItems = Data.slice(startIdx, startIdx + ITEMS_PER_PAGE);
+    let currentItems = Data.slice(startIdx, startIdx + ITEMS_PER_PAGE);
 
     const handlePrevious = () => {
         if (currentPage > 1) {
@@ -35,6 +36,21 @@ const Categoria = () => {
     const handlePageClick = (pageNum) => {
         setCurrentPage(pageNum);
     };
+
+    const handleSortChange = (event) => {
+        setSortOption(event.target.value);
+    };
+
+    const sortItems = (items, option) => {
+        if (option === 'name') {
+            return [...items].sort((a, b) => a.common_name.localeCompare(b.common_name));
+        } else if (option === 'price') {
+            return [...items].sort((a, b) => a.price - b.price);
+        }
+        return items;
+    };
+
+    const sortedItems = sortItems(currentItems, sortOption);
 
     const renderPagination = () => {
         const pages = [];
@@ -57,7 +73,7 @@ const Categoria = () => {
             case 'allPlants':
                 return (
                     <AllPlants
-                        currentItems={currentItems}
+                        currentItems={sortedItems}
                         currentPage={currentPage}
                         totalPages={totalPages}
                         handleNext={handleNext}
@@ -146,7 +162,20 @@ const Categoria = () => {
                             Sale
                         </li>
                     </ul>
-                    <div>Sort by: Default sorting <KeyboardArrowDownIcon /></div>
+                    <div className='flex items-center'>
+                        <span>Sort by: </span>
+                        <Select
+                            value={sortOption}
+                            onChange={handleSortChange}
+                            displayEmpty
+                            inputProps={{ 'aria-label': 'Without label' }}
+                            sx={{ marginLeft: '10px', color: 'black' }}
+                        >
+                            <MenuItem value="default">Default sorting</MenuItem>
+                            <MenuItem value="name">Name</MenuItem>
+                            <MenuItem value="price">Price</MenuItem>
+                        </Select>
+                    </div>
                 </div>
                 {renderContent()}
             </div>

@@ -129,7 +129,7 @@ const Checkout = () => {
             </ul>
             <div className='w-[85%] mx-auto flex justify-between'>
                 <div className='w-[65%] h-[1000px]'>
-                    <div>Billing Address</div>
+                    <div className='text-[20px] font-semibold mt-[20px]'>Billing Address</div>
                     <form onSubmit={handleSubmit} className='flex justify-between w-[100%] h-[100%]'>
                         <div className='w-[49%] h-[100%]'>
                             <label htmlFor="firstName" className={`mt-[15px] block ${errors.firstName ? 'text-red-600' : ''}`}>First Name</label>
@@ -234,27 +234,27 @@ const Checkout = () => {
             {
                 isModalOpen && (
                     <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
-                        <div ref={modalRef} className="bg-white p-4 rounded-md w-[480px] h-[630px] border-b-[5px] border-green-600">
+                        <div ref={modalRef} className="bg-[white] p-4 rounded-md w-[480px] h-[630px] border-b-[5px] border-green-600">
                             <div className='w-[100%] h-[130px] border bg-[#f2f1f1] flex flex-col justify-center items-center'>
                                 <img src={vector} alt="" className='' />
                                 <p className='text-[#4a4949] mt-[10px]'>Your order has been received</p>
                             </div>
                             <ul className='flex justify-between mt-[10px]'>
                                 <li className='w-[25%] h-[50px] border-r-[1px]'>
-                                    <p className='text-[13px] pl-[3px]'>Order Number</p>
-                                    <span className='font-semibold text-[gray] text-[14px] pl-[3px]'>19586687</span>
+                                    <p className='text-[13px] pl-[10px]'>Order Number</p>
+                                    <span className='font-semibold text-[gray] text-[14px] pl-[10px]'>19586687</span>
                                 </li>
                                 <li className='w-[25%] h-[50px] border-r-[1px]'>
-                                    <p className='text-[13px] pl-[3px]'>Date</p>
-                                    <span className='font-semibold text-[gray] text-[14px] pl-[3px]'>15 Sep, 2021</span>
+                                    <p className='text-[13px] pl-[10px]'>Date</p>
+                                    <span className='font-semibold text-[gray] text-[14px] pl-[10px]'>15 Sep, 2021</span>
                                 </li>
                                 <li className='w-[25%] h-[50px] border-r-[1px]'>
-                                    <p className='text-[13px] pl-[3px]'>Total</p>
-                                    <span className='font-semibold text-[gray] text-[14px] pl-[3px]'>2,699.00</span>
+                                    <p className='text-[13px] pl-[10px]'>Total</p>
+                                    <span className='font-semibold text-[gray] text-[14px] pl-[10px]'>2,699.00</span>
                                 </li>
                                 <li className='w-[25%] h-[50px] '>
-                                    <p className='text-[13px] pl-[3px]'>Payment Method</p>
-                                    <span className='font-semibold text-[gray] text-[14px] pl-[3px]'>Cash on delivery</span>
+                                    <p className='text-[13px] pl-[10px]'>Payment Method</p>
+                                    <span className='font-semibold text-[gray] text-[14px] pl-[10px]'>Cash on deliv</span>
                                 </li>
                             </ul>
                             <h2 className="text-2xl font-semibold mb-4">Order Detail</h2>
@@ -278,14 +278,16 @@ const Checkout = () => {
                                     </div>
                                 ))}
                             </div>
-                            <ul className='border-b'>
-                                <li className='flex justify-between items-center'><p>Shiping</p><span>$16.00</span></li>
-                                <li className='flex justify-between items-center'><p>Total</p><span className='text-green-500 font-semibold'>$0</span></li>
+                            <ul className='border-b w-[90%] mx-auto mb-[10px]'>
+                                <li className='flex justify-between items-center'><p className='font-semi10old'>Shiping</p><span>$16.00</span></li>
+                                <li className='flex justify-between items-center'><p className='font-semi10old'>Total</p><span classNam10='text-green-500 font-semibold'>$0</span></li>
                             </ul>
                             <div>
                                 <p className='text-center text-[14px] text-[gray] mt-[10px]'>Your order is currently being processed. You will receive an order confirmation email shortly with the expected delivery date for your items.</p>
                             </div>
-                            
+                            <div className='w-[100%] flex justify-center mt-[10px]'>
+                                <button className='w-[150px] h-[45px] bg-green-500 rounded font-semibold text-white'>Track your order</button>
+                            </div>
                         </div>
                     </div>
                 )
